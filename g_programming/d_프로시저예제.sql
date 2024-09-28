@@ -22,4 +22,4 @@ FROM member M
 	LEFT JOIN buy B
     ON B.mem_id = M.mem_id
 GROUP BY M.mem_id
-ORDER BY '총 구매액' DESC;
+ORDER BY SUM(price * amount) DESC;
